@@ -1,22 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect} from 'react';
 import Message from './Message'
 
-export default class Chat extends Component {
-
-    render() {
-        let messages = this.props.messages;
-        if (messages.length > 6) {
-            messages.shift()
-            messages.shift()
-        }
-
-        return (
-            <div>
-                <p>Welcome to our service chat!</p>
-                {messages.map((message,i) => 
-                    <Message key={i} text={message.text} user={message.user} />
-                )}
-            </div>
-        )
+function Chat (props) {
+    console.log(props)
+    let [messages, setMessages] = useState(props.messages)
+    if (messages.length > 6) {
+        messages.shift()
+        messages.shift()
     }
+
+    useEffect(() => {
+        setMessages(props.messages);
+    }, [props.messages]);
+
+    return (
+        <div>
+            <p>Welcome to our service chat!</p>
+            {messages.map((message,i) => 
+                <Message key={i} text={message.text} user={message.user} />
+            )}
+        </div>
+    )
 }
+
+export default Chat

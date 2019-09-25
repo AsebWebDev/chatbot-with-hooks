@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Label } from 'semantic-ui-react'
 
 import botavatar from '../media/bot.gif'
 import useravatar from '../media/user.png'
