@@ -1,0 +1,109 @@
+header h1 {
+  color: green;
+}
+
+input {
+  min-width: 45vw;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.message-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+    color: rgb(121, 121, 207);
+}
+
+.message-bot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: green;
+}
+
+.message-bot b {
+  margin: 0 20px 0 20px;
+}
+
+.message-user b {
+  margin: 0 20px 0 20px;
+}
+
+.tracking {
+  color: orange;
+}
+
+.left {
+  width: 50%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right {
+  height: 90vh;
+  padding: 30px;
+  width: 50%;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top {
+  height: 70vh;
+  padding: 30px 20px 0 20px;
+  font-size: 1.2rem;
+}
+
+.top b {
+  color: yellow;
+}
+
+.bottom {
+  height: 10vh;
+}
+
+.orders {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.order {
+  padding: 10px;
+}
+
+.top-info {
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-main {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
