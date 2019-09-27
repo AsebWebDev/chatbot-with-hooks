@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react';
 import Message from './Message'
 
 function Chat (props) {
-    console.log(props)
     let [messages, setMessages] = useState(props.messages)
     if (messages.length > 6) {
         messages.shift()
