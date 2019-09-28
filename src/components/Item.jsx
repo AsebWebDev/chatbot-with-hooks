@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Comment } from 'semantic-ui-react'
 
-export default class Item extends Component {
-    render() {
-        let item = this.props.item;
+function Item (props) {
+        let [item] = useState(props.item)
         return (
             <div>
                 <Comment.Group>
@@ -22,5 +21,6 @@ export default class Item extends Component {
                 </Comment.Group>
             </div>
         )
-    }
 }
+
+export default Item
