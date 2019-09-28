@@ -1,31 +1,23 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Input } from 'semantic-ui-react'
 
-export default class InputBox extends Component {
-    constructor(props) {
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = {value: ''};
-      }
+function InputBox (props) {
+    let [value, setValue] = useState('')
+    let [inputBoxState] = useState(props)
 
-    handleSubmit = (e) => {
+    let handleSubmit = e => {
         e.preventDefault();
-        this.props.handleNewMessage(this.state.value)   
-        this.setState({value:''}) 
+        inputBoxState.handleNewMessage(value)   
+        setValue('')
     }
 
-    handleChange(e){
-        e.preventDefault();
-        this.setState({value: e.target.value})
-    }
-
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <Input placeholder='Talk to the Bot...' value={this.state.value} onChange={e => this.handleChange(e)}  />
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <form onSubmit={e => handleSubmit(e)}>
+                <Input placeholder='Talk to the Bot...' value={value} onChange={e => setValue(e.target.value)}  />
+            </form>
+        </div>
+    )
 }
+
+export default InputBox
